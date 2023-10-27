@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="patient/base::layout(~{::section})">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="card" th:each="doctor : ${listDoctor}">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9 col-sm-6">
+						<div style="display: flex;">
+							<img class="avatar" th:src="@{'/img/'+${doctor.imageName}}">
+							<div class="Name">
+								<h5 class="N" th:text="${doctor.doctorFullName}">
+
+								</h5>
+								<h7 class="Specialization" th:text="${doctor.doctorSpecialization}">
+								</h7>
+								<br><br>
+								<div style="display: flex;">
+									<div>
+										<h5>
+											Qualification
+										</h5>
+										<p th:text="${doctor.doctorQualification}">
+										</p>
+									</div>
+									<div class="line"></div>
+
+									<div style="margin-left: 20px;">
+										<h5>
+											Experience
+										</h5>
+										<p th:text="${doctor.doctorExperience}">
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="box">
+							<h2 class="card-h3">
+								Appointment
+							</h2>
+							<div style="display: flex">
+								<img class="card-p1" th:src="@{/images/dot.png}">
+								<p class="card-cc">Available </p>
+								<h6 class="card-c2">Rs. 1500rs</h6>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-3 col-sm-6 b">
+						<div class="card-c5">
+							<p style="font-size: 10px">PMC VERIFIED</p>
+						</div>
+						<div class="x">
+							<button class="btn">
+								<a th:href="@{/appointments/new/{id}(id=${doctor.id})}">Book Appointment</a>
+							</button>
+							<br>
+							<button  class="detail-btn1">
+								<a th:href="@{/patient/showDoctorForm/{id}(id=${doctor.id})}">View Details</a>
+							</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

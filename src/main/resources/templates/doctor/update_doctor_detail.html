@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="doctor/base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<title>Doctor Register page</title>
+</head>
+
+<body>
+	<section>
+		<div>
+			<form class=" relative ml-42 " th:action="@{/doctor/saveDoctor}" method="post" th:object="${doctor}">
+				<div class="flex flex-wrap -mx-3 mb-6">
+					<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-first-name">
+							First Name
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							id="grid-first-name" type="text" th:field="*{doctorFirstName}" placeholder="First Name">
+
+					</div>
+					<div class="w-full md:w-1/2 px-3">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-last-name">
+							Last Name
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							id="grid-last-name" type="text" th:field="*{doctorLastName}" placeholder="Last Name">
+					</div>
+				</div>
+
+				<div class="flex flex-wrap -mx-3 mb-6">
+					<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-first-name">
+							City
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							id="grid-first-name" type="text" th:field="*{doctorCity}" placeholder="Enter City">
+
+					</div>
+					<div class="w-full md:w-1/2 px-3">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-last-name">
+							Zip Code
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							id="grid-last-name" type="text" th:field="*{doctorZip}" placeholder="Zip Code">
+					</div>
+				</div>
+				<div class="flex flex-wrap w-full mb-3">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						Hospital
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{doctorHospital}" placeholder="Hospital">
+				</div>
+				<div class="flex flex-wrap w-full mb-3">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						Qualification
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{doctorQualification}"  placeholder="Enter Degree">
+				</div>
+				<div class="flex flex-wrap w-full mb-3">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						Condition Treated
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{doctorConditionTreated}" placeholder="Condition Treated">
+				</div>
+				<div class="flex flex-wrap w-full mb-3">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						Specilization
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{doctorSpecialization}" placeholder="Enter Specilization">
+				</div>
+
+		<div class="flex flex-wrap -mx-3 mb-2">
+			<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+					Services
+				</label>
+				<input
+					class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+					id="grid-zip" type="text" th:field="*{services}"
+					placeholder="eg Acne Scarring,All Diseases related to skin">
+			</div>
+			<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+					Experiance
+				</label>
+				<input
+					class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+					id="grid-zip" type="text" th:field="*{doctorExperience}" placeholder="">
+			</div>
+
+
+		</div>
+
+
+
+		<div class="w-full">
+			<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+				Timing
+			</label>
+			<input
+				class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+				id="grid-zip" type="text" th:field="*{doctorTiming}"
+				placeholder="Monday 7:pm to 10pm, Tuesday 7:pm to 10pm,  wednesday 7:pm to 10pm, ">
+		</div>
+		<div class="pt-2 w-full">
+			<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+				fees
+			</label>
+			<input
+				class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+				id="grid-zip" type="text" th:field="*{doctorFees}" placeholder="Rs.1000">
+		</div>
+		<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-5 rounded">
+			Upload
+		</button>
+		</form>
+
+		</div>
+
+
+	</section>
+
+</body>
+
+</html>

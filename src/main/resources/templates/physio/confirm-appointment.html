@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="physio/base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="formbold-main-wrapper">
+			<div class="formbold-form-wrapper">
+				<form th:action="@{/physio/appointments/{id}/confirm(id=${appointment.id})}" method="post"
+					th:object="${appointment}">
+					<th:block th:if="${session.msg}">
+						<p
+							style="background-color: green; padding: 14px; text-align: center; color: white; font-size: 20px;">
+							[[${session.msg}]]</p>
+					</th:block>
+					<h1 class="text-center display-6 fw-bold pb-2">Appointment Confirmation Form</h1>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Patient name </label>
+						<p class="formbold-form-input"><span th:text="${appointment.patient.patientFirstName}"></span>
+						</p>
+					</div>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Description </label>
+						<p class="formbold-form-input"><span th:text="${appointment.description}"></span></p>
+					</div>
+
+					<div class="flex flex-wrap formbold--mx-3">
+						<div class="w-full sm:w-half formbold-px-3">
+							<div class="formbold-mb-5 w-full">
+								<label for="date" class="formbold-form-label"> Date </label>
+								<p class="formbold-form-input"><span th:text="${appointment.date}"></span></p>
+							</div>
+						</div>
+						<div class="w-full sm:w-half formbold-px-3">
+							<div class="formbold-mb-5">
+								<label for="text" class="formbold-form-label"> Time </label>
+								<p class="formbold-form-input"><span th:text="${appointment.time}"></span></p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<button class="formbold-btn">Confirm Appointment</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

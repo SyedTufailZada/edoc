@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: edoc-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: edocadmin1124 # Set the root password
+      MYSQL_DATABASE: edoc # Create the eDoc database
+      MYSQL_USER: admin # Set the username
+      MYSQL_PASSWORD: edocadmin1124 # Set the password for the 'admin' user
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  edoc:
+    build: .
+    container_name: edoc-app
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/edoc
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: edocadmin1124
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysql-data:

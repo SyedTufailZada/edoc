@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="patient/base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Doctor page</title>
+</head>
+
+<body>
+	<section>
+
+		<div th:each="nurse : ${nurse}">
+			<div class="Main-div">
+				<div style="display: flex;">
+					<img class="avatar" th:src="@{'/img/'+${nurse.imageName}}">
+					<div class="this-name">
+						<img style="padding-bottom: 5px;" th:src="@{/svg/platinium.svg}">
+						<h5 class="myName" th:text="${nurse.nurseFullName}">
+							
+						</h5>
+
+						<h7 class="MySpecialization" th:text="${nurse.nurseCity}">
+					
+						</h7>
+						<br><br>
+						<div style="display: flex;">
+							<div>
+								<h5 style="font-size: 1.3rem; font-weight: bolder;">
+									Specialization
+								</h5>
+
+								<p th:text="${nurse.nurseSpecialization}">
+									
+								</p>
+							</div>
+
+							<div class="myLine"></div>
+
+							<div style="margin-left: 20px;">
+								<h5 style="font-size: 1.3rem; font-weight: bolder;">
+									Experience
+								</h5>
+
+								<p th:text="${nurse.nurseExperience}">
+								</p>
+							</div>
+							<div class="myLine"></div>
+
+							<div style="margin-left: 20px;">
+								<h5 style="font-size: 1.3rem; font-weight: bolder;">
+									Hospital
+								</h5>
+
+								<p th:text="${nurse.nurseHospital}">
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card-section">
+			<h4 style="padding-top: 3%;text-align: center;">Hospital & Cardiac Center</h4>
+			<p style="padding-left:10%;padding-top: 30%;">Fee &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+				&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+				&nbsp &nbsp &nbsp <b th:text="${nurse.nurseFees}"></b></p>
+
+			<div class="mini-divider"></div>
+
+			<p style="padding-left:10%;padding-top: 5%;">Address &nbsp &nbsp &nbsp &nbsp &nbsp<b style="padding-left: 47%;" th:text="${nurse.nurseHospital}"></b></p>
+
+			<div class="mini-divider"></div>
+			<div style="display: flex;">
+				<img class="clock" th:src="@{/images/available-time-image.png}">
+				<p style="color: lightgreen;margin-top: 15px;margin-left: 10px;">Avalaible</p>
+
+				<p class="time" style="padding-left: 9%;" th:text="${nurse.nurseTiming}"></p>
+			</div>
+
+
+			<div style="padding-left: 20px;">
+				<button class="myBtn1">
+					<a th:href="@{/appointment/nurse/new/{id}(id=${nurse.id})}">Book Appointment</a> 				</button>
+			</div>
+		</div>
+		<div class="list-section">
+			<div class="divider"></div>
+			<h4 style="padding-top: 20px; font-size: 22px; font-weight: bolder;">Services</h4>
+			<div style="display: flex;">
+				<div>
+					<ul style="padding: 10px 0px 0px 13px;">
+						<li th:text="${nurse.services}"></li>
+					</ul>
+				</div>
+			</div>
+			<div class="divider"></div>
+			<h4 style="padding-top: 20px; font-size: 22px; font-weight: bolder;">Conditions Treated</h4>
+			<div style="display: flex;">
+				<div>
+					<ul style="padding: 10px 0px 0px 13px;">
+						<li th:text="${nurse.nurseConditionTreated}"></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="divider"></div>
+			<h4 style="padding-top: 20px; font-size: 22px; font-weight: bolder;">Education</h4>
+			<div style="display: flex;">
+				<div>
+					<ul style="padding: 10px 0px 0px 13px;">
+						<li th:text="${nurse.nurseQualification}">Education</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="divider"></div>
+			<h4 style="padding-top: 20px; font-size: 22px; font-weight: bolder;">Email</h4>
+			<div style="display: flex;">
+				<div>
+					<ul style="padding: 10px 0px 0px 13px;">
+						<li th:text="${nurse.email}"></li>
+				</div>
+			</div>
+
+			<div class="divider"></div>
+			<h4 style="padding-top: 20px; font-size: 22px; font-weight: bolder;">Experience</h4>
+			<div style="display: flex;">
+				<div>
+					<ul style="padding: 10px 0px 0px 13px;">
+						<li th:text="${nurse.nurseExperience}"></li>
+				</div>
+			</div>
+
+			<div class="divider"></div>
+			<h4 style="padding-top: 20px; font-size: 22px; font-weight: bolder;">Professional Memberships</h4>
+			<div style="display: flex;">
+				<div>
+					<ul style="padding-top: 10px;">
+						<li>Professional Memberships</li>
+				</div>
+			</div>
+		</div>
+		</div>
+
+
+	</section>
+
+</body>
+
+</html>

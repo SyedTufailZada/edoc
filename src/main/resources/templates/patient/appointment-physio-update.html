@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="patient/base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="formbold-main-wrapper">
+			<div class="formbold-form-wrapper">
+				<form th:action="@{/patient/appointment/{id}/update/physio(id=${appointment.id})}" method="post"
+					th:object="${appointment}">
+					<h1 class="text-center display-6 fw-bold pb-2">Update Appointment Physio</h1>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Consultation with </label>
+						<p class="formbold-form-input"><span th:text="${appointment.physio.physioFullName}"></span>
+						</p>
+					</div>
+
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Disease </label>
+						<input type="text" name="disease" th:field="*{disease}"
+							placeholder="Consultation reason" class="formbold-form-input" />
+					</div>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Description </label>
+						<input type="text" name="description" th:field="*{description}"
+							placeholder="Consultation reason" class="formbold-form-input" />
+					</div>
+
+					<div class="flex flex-wrap formbold--mx-3">
+						<div class="w-full sm:w-half formbold-px-3">
+							<div class="formbold-mb-5 w-full">
+								<label for="date" class="formbold-form-label"> Date </label>
+								<input type="date" name="date" id="date" th:field="*{date}"
+									class="formbold-form-input" />
+							</div>
+						</div>
+						<div class="w-full sm:w-half formbold-px-3">
+							<div class="formbold-mb-5">
+								<label for="text" class="formbold-form-label"> Time </label>
+								<input type="text" name="time" id="text" th:field="*{time}"
+									class="formbold-form-input" />
+							</div>
+						</div>
+					</div>
+					<div>
+						<button class="formbold-btn">Update</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

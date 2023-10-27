@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>
+		Index Page
+	</title>
+</head>
+
+<body>
+	<section>
+		<form class="mt-0">
+			<div class="justify-center" style="background-image: url('/images/header-bg.jpg'); top: 10px; height: 70vh">
+
+				<p class="text-white pt-24 ml-24 text-3xl" style="padding-top: 17vh">Find and Book The Best </p>
+				<p class="text-yellow-500  ml-24 text-3xl">Doctor</p>
+
+				<div class="justify-center pt-4 ml-24 mr-24">
+					<label for="default-search"
+						class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+					<div class="relative ">
+						<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+							<svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none"
+								stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+									d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+							</svg>
+						</div>
+						<input type="search" id="default-search"
+							class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+							placeholder="Search Doctor, Nurses..." required>
+						<button type="submit"
+							class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+					</div>
+				</div>
+
+
+
+				<!-- <img class="flex"  src="images/header-bg.jpg"> -->
+
+			</div>
+		</form>
+
+
+		<section class="text-gray-600 body-font bg-gray-100">
+			<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+				<img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
+					th:src="@{/images/docCheck2.jpeg}">
+				<div class="text-center lg:w-2/3 w-full">
+					<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to E-DOC</h1>
+					<p class="mb-8 leading-relaxed">E-Doc application allow patients to connect with
+						medical professionals on the online platform. In other words, patients get a consultation from
+						doctors in the virtual world.</p>
+					<div class="flex justify-center">
+						<button
+							class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg"><a
+								th:href="@{/patient/login}">Book Appointment</a></button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="text-gray-600 body-font pt-20 ">
+			<h2 class="h4 text-center mb-4 text-3xl  text-gray-500-500">Book appointments in 3 easy steps</h2>
+			<div class="container px-5 py-24 mx-auto flex flex-wrap">
+				<div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+					<div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+						<div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+					</div>
+					<div
+						class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm">
+						1</div>
+					<div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+						<div
+							class="flex-shrink-0 w-24 h-24 bg-blue-100 text-blue-500 rounded-full inline-flex items-center justify-center">
+							<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+								stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+								<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+							</svg>
+						</div>
+						<div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+							<h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Search for doctors by
+								specialty,service or
+								disease</h2>
+
+						</div>
+					</div>
+				</div>
+				<div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+					<div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+						<div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+					</div>
+					<div
+						class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm">
+						2</div>
+					<div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+						<div
+							class="flex-shrink-0 w-24 h-24 bg-blue-100 text-blue-500 rounded-full inline-flex items-center justify-center">
+							<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+								stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+								<path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+							</svg>
+						</div>
+						<div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+							<h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Select based on Experience or
+								Fee</h2>
+						</div>
+					</div>
+				</div>
+				<div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+					<div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+						<div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+					</div>
+					<div
+						class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-blue-500 text-white relative z-10 title-font font-medium text-sm">
+						3</div>
+					<div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+						<div
+							class="flex-shrink-0 w-24 h-24 bg-blue-100 text-blue-500 rounded-full inline-flex items-center justify-center">
+							<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+								stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+								<circle cx="12" cy="5" r="3"></circle>
+								<path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+							</svg>
+						</div>
+						<div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+							<h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Book a Confirmed Appointment
+								within Seconds
+							</h2>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+
+
+
+		<div class="bg-gray-50 py-6 sm:py-8 lg:py-12">
+			<div class="max-w-screen-xl px-4 md:px-8 mx-auto">
+				<!-- text - start -->
+				<div class="mb-10 md:mb-16">
+					<h2 class="text-gray-500 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">Health Tips
+					</h2>
+				</div>
+				<!-- text - 
+				.......................................................................
+				
+				end -->
+				<div class="bg-gray-100 w-full min-h-screen gap-4 flex-wrap flex justify-center items-center">
+
+					<!-- Card -->
+					<div
+						class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+						<!-- Image -->
+						<img class="h-40 object-cover rounded-xl"
+							src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+						<div class="p-2">
+							<!-- Heading -->
+							<h2 class="font-bold text-lg mb-2 ">Measure and Watch Your Weight.</h2>
+							<!-- Description -->
+							<p class="text-sm text-gray-600">Keeping track of your body weight on a daily or weekly
+								basis will help you see what you’re losing and/or what
+								you’re gaining.</p>
+						</div>
+						<!-- CTA -->
+						<div class="m-2">
+						</div>
+					</div>
+					<!-- Card -->
+					<div
+						class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+						<!-- Image -->
+						<img class="h-40 object-cover rounded-xl"
+							src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+						<div class="p-2">
+							<!-- Heading -->
+							<h2 class="font-bold text-lg mb-2 ">Limit Unhealthy Foods and Eat Healthy Meals.</h2>
+							<!-- Description -->
+							<p class="text-sm text-gray-600">To maintain a healthy lifestyle, it is essential to limit
+								the consumption of unhealthy foods and prioritize nutritious meals for optimal
+								well-being.</p>
+						</div>
+						<!-- CTA -->
+						<div class="m-2">
+						</div>
+					</div>
+
+					<!-- Card -->
+					<div
+						class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+						<!-- Image -->
+						<img class="h-40 object-cover rounded-xl"
+							src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+						<div class="p-2">
+							<!-- Heading -->
+							<h2 class="font-bold text-lg mb-2 ">Drink Water and Stay Hydrated.</h2>
+							<!-- Description -->
+							<p class="text-sm text-gray-600">Stay hydrated and maintain good health by drinking an
+								adequate amount of water throughout the day, while minimizing the consumption of sugary
+								beverages.</p>
+						</div>
+						<!-- CTA -->
+						<div class="m-2">
+						</div>
+					</div>
+					<!-- Card -->
+					<div
+						class="w-60 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+						<!-- Image -->
+						<img class="h-40 object-cover rounded-xl"
+							src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+						<div class="p-2">
+							<!-- Heading -->
+							<h2 class="font-bold text-lg mb-2 ">Reduce Sitting and Screen Time</h2>
+							<!-- Description -->
+							<p class="text-sm text-gray-600">Reduce sitting and screen time to improve overall health.
+								Take frequent breaks, and limit prolonged periods of sitting and screen use to maintain
+								a healthy lifestyle.</p>
+						</div>
+						<div class="m-2">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="bg-gray-50 py-6 sm:py-8 lg:py-12">
+			<div class="max-w-screen-xl px-4 md:px-8 mx-auto">
+				<!-- text - start -->
+				<div class="mb-10 md:mb-16">
+					<h2 class="text-gray-500 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">Find Doctor By
+						Health concern
+					</h2>
+
+
+				</div>
+				<!-- text - end -->
+
+				<div class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 lg:gap-x-8 gap-y-6 sm:gap-y-8 lg:gap-y-12">
+					<!-- person - start -->
+					<div class="flex flex-col sm:flex-row items-center gap-2 md:gap-4">
+						<div class="w-24 md:w-32 h-24 md:h-32  rounded-full overflow-hidden shadow-lg">
+							<img th:src="@{/images/doctor-female.png}" loading="lazy" alt="Photo by Radu Florin"
+								class="w-full h-full object-cover object-center" />
+						</div>
+
+						<div>
+							<div class="text-gray-500 md:text-lg font-bold text-center sm:text-left">Gynecologist</div>
+						</div>
+					</div>
+					<!-- person - end -->
+
+
+
+					<!-- person - start -->
+					<div class="flex flex-col sm:flex-row items-center gap-2 md:gap-4 b">
+						<div class="w-24 md:w-32 h-24 md:h-32 rounded-full overflow-hidden shadow-lg">
+							<img th:src="@{/images/doctor-male.png}" loading="lazy" alt="Photo by Radu Florin"
+								class="w-full h-full object-cover object-center" />
+						</div>
+
+						<div>
+							<div class="text-gray-500 md:text-lg font-bold text-center sm:text-left">Skin Specialist
+							</div>
+						</div>
+					</div>
+					<!-- person - end -->
+
+					<!-- person - start -->
+					<div class="flex flex-col sm:flex-row items-center gap-2 md:gap-4">
+						<div class="w-24 md:w-32 h-24 md:h-32  rounded-full overflow-hidden shadow-lg">
+							<img th:src="@{/images/doctor-female.png}" loading="lazy" alt="Photo by Radu Florin"
+								class="w-full h-full object-cover object-center" />
+						</div>
+
+						<div>
+							<div class="text-gray-500  md:text-lg font-bold text-center sm:text-left">Eye Specialist
+							</div>
+						</div>
+					</div>
+					<!-- person - end -->
+
+					<!-- person - start -->
+					<div class="flex flex-col sm:flex-row items-center gap-2 md:gap-4">
+						<div class="w-24 md:w-32 h-24 md:h-32 rounded-full overflow-hidden shadow-lg">
+							<img th:src="@{/images/doctor-male.png}" loading="lazy" alt="Photo by Radu Florin"
+								class="w-full h-full object-cover object-center" />
+						</div>
+
+						<div>
+							<div class="text-gray-500  md:text-lg font-bold text-center sm:text-left">Diabetes
+								specialist</div>
+						</div>
+					</div>
+					<!-- person - end -->
+
+					<!-- person - start -->
+					<div class="flex flex-col sm:flex-row items-center gap-2 md:gap-4">
+						<div class="w-24 md:w-32 h-24 md:h-32 rounded-full overflow-hidden shadow-lg">
+							<img th:src="@{/images/doctor-female.png}" loading="lazy" alt="Photo by Radu Florin"
+								class="w-full h-full object-cover object-center" />
+						</div>
+
+						<div>
+							<div class="text-gray-500 md:text-lg font-bold text-center sm:text-left">ENT Specialist
+							</div>
+						</div>
+					</div>
+					<!-- person - end -->
+
+					<!-- person - start -->
+					<div class="flex flex-col sm:flex-row items-center gap-2 md:gap-4">
+						<div class="w-24 md:w-32 h-24 md:h-32  rounded-full overflow-hidden shadow-lg ">
+							<img th:src="@{/images/doctor-male.png}" loading="lazy" alt="Photo by Radu Florin"
+								class="w-full h-full object-cover object-center " />
+						</div>
+
+						<div>
+							<div class="text-gray-500 md:text-lg font-bold text-center sm:text-left">Child Specialist
+							</div>
+						</div>
+					</div>
+					<!-- person - end -->
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

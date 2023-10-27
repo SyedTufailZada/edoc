@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="doctor/base::layout(~{::section})">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<h1 class="text-center display-6 fw-bold pb-2 bg-gradient">Your Appointments</h1>
+		<div class="card" th:each="appointment : ${appointments}">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9 col-sm-6">
+						<div style="display: flex;">
+							<img class="avatar" th:src="@{'/img/'+${appointment.patient.imageName}}" style="border-radius: 25px; padding: 8% 0px 0px 35px; ;height: 21%; width: 23%;"  alt="profile">
+							<div class="Name">
+								<a
+									class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+									<a class="nav__link"
+										th:href="@{/doctor/showPatientDetail/{id}(id=${appointment.patient.id})}">
+										<h5 class="N" th:text="${appointment.patient.patientFirstName}"></h5>
+									</a>
+									<h7 class="Specialization" th:text="${appointment.patient.patientAddress}">
+									</h7>
+									<br><br>
+									<div style="display: flex;">
+										<div>
+											<h5>
+												Time
+											</h5>
+											<p th:text="${appointment.time}">
+											</p>
+										</div>
+										<div class="line"></div>
+										<div style="margin-left: 20px;">
+											<h5>
+												Date
+											</h5>
+											<p th:text="${appointment.date}">
+											</p>
+										</div>
+									</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 b">
+						<div class="card-c5">
+							<p style="font-size: 10px">PMC VERIFIED</p>
+						</div>
+						<div class="x">
+							<button class="btn">
+								<a
+									th:href="@{/doctor/reschedule/appointments/{id}(id=${appointment.id})}">Reschedule</a>
+							</button>
+							<br>
+							<button class="detail-btn1">
+								<a th:href="@{/doctor/appointments/delete/{id}(id=${appointment.id})}">Delete</a>
+							</button>
+							<form>
+							<button class="detail-btn1">
+								<a th:href="@{/doctor/appointments/confirm/{id}(id=${appointment.id})}">Confirm</a>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="patient/base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="formbold-main-wrapper">
+			<div class="formbold-form-wrapper">
+				<form th:action="@{/patient/appointment/{id}/update(id=${appointment.id})}" method="post"
+					th:object="${appointment}">
+					<h1 class="text-center display-6 fw-bold pb-2">Update Appointment</h1>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Consultation with </label>
+						<p class="formbold-form-input"><span th:text="${appointment.doctor.doctorFullName}"></span>
+						</p>
+					</div>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Description </label>
+						<input type="text" name="description" th:field="*{description}"
+							placeholder="Consultation reason" class="formbold-form-input" />
+					</div>
+
+					<div class="flex flex-wrap formbold--mx-3">
+						<div class="w-full sm:w-half formbold-px-3">
+							<div class="formbold-mb-5 w-full">
+								<label for="date" class="formbold-form-label"> Date </label>
+								<input type="date" name="date" id="date" th:field="*{date}"
+									class="formbold-form-input" />
+							</div>
+						</div>
+						<div class="w-full sm:w-half formbold-px-3">
+							<div class="formbold-mb-5">
+								<label for="text" class="formbold-form-label"> Time </label>
+								<input type="text" name="time" id="text" th:field="*{time}"
+									class="formbold-form-input" />
+							</div>
+						</div>
+					</div>
+					<div>
+						<button class="formbold-btn">Update</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<!--<section>
+		<div class="formbold-main-wrapper">
+			<div class="formbold-form-wrapper">
+				<form th:action="@{/appointments/save}" th:object="${appointment}" method="post">
+					<h1 class="text-center display-6 fw-bold pb-2">Update Appointment</h1>
+					<div class="formbold-mb-5"></div>
+					<label for="name" class="formbold-form-label">Consultation With </label>
+					<select id="doctor" th:field="*{doctor}" class="formbold-form-input">
+						<option th:each="doctor : ${doctors}" th:value="${doctor.id}"
+							th:text="${doctor.doctorFullName}"></option>
+					</select>
+					<div class="formbold-mb-5 mt-3">
+						<label for="name" class="formbold-form-label"> Patient Full Name </label>
+						<select id="patient" th:field="*{patient}" class="formbold-form-input">
+							<option th:value="${patient.id}" th:text="${patient.patientFirstName}"></option>
+						</select>
+					</div>
+					<div class="formbold-mb-5">
+						<label for="phone" class="formbold-form-label"> Phone Number </label>
+						<select id="patient" th:field="*{patient}" class="formbold-form-input">
+							<option th:value="${patient.id}" th:text="${patient.patientMobileNumber}"></option>
+						</select>
+					</div>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Email Address </label>
+						<select id="patient" th:field="*{patient}" class="formbold-form-input">
+							<option th:value="${patient.id}" th:text="${patient.email}"></option>
+						</select>
+					</div>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Description </label>
+						<input type="text" name="description" th:field="*{description}"
+							placeholder="Consultation reason" class="formbold-form-input" />
+					</div>
+					<div class="flex flex-wrap formbold--mx-3">
+						<div class="w-full sm:w-half formbold-px-3">
+							<div class="formbold-mb-5 w-full">
+								<label for="date" class="formbold-form-label"> Date </label>
+								<input type="date" name="date" id="date" th:field="*{date}"
+									class="formbold-form-input" />
+							</div>
+						</div>
+						<div class="w-full sm:w-half formbold-px-3">
+							<div class="formbold-mb-5">
+								<label for="text" class="formbold-form-label"> Time </label>
+								<input type="text" name="time" id="text" th:field="*{time}"
+									class="formbold-form-input" />
+							</div>
+						</div>
+					</div>
+					<div>
+						<button class="formbold-btn">Update Appointment</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>-->
+</body>
+
+</html>

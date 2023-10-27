@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="doctor/base::layout(~{::section})">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div>
+			<header>
+				<div class="header_img flex_column_center">
+					<img th:src="@{'/img/'+${doctor.imageName}}" alt="Logo" />
+				</div>
+				<div class="header_text flex_column_center">
+					<h1 th:text="${doctor.doctorFullName}"></h1>
+					<h2 th:text="${doctor.email}"></h2>
+				</div>
+				<div class="header_svg_list flex_row_center">
+			</header>
+			<main>
+				<section id="main_section_container_1" class="flex_column_center">
+					<div class="main_small_button_list">
+						
+						<a class="main_small_a_item" href="#link" target="_blank" rel="nofollow">
+							<button class="main_small_button_item" th:text="${doctor.doctorSpecialization}"></button>
+						</a>
+						<a class="main_small_a_item" href="#link" target="_blank" rel="nofollow">
+							<button class="main_small_button_item" th:text="${doctor.doctorQualification}"></button>
+						</a>
+					</div>
+					<div class="main_small_button_list">
+						<a class="main_small_a_item" href="#link" target="_blank" rel="nofollow">
+							<button class="main_small_button_item" th:text="${doctor.doctorHospital}"></button>
+						</a>
+						<a class="main_small_a_item" href="#link" target="_blank" rel="nofollow">
+							<button class="main_small_button_item" th:text="${doctor.services}"></button>
+						</a>
+					</div>
+					<a class="main_a_item" href="#link" target="_blank" rel="nofollow">
+						<button class="main_button_item" th:text="${doctor.doctorExperience}"></button>
+					</a>
+					<a class="main_a_item" href="#link" target="_blank" rel="nofollow">
+						<button class="main_button_item" th:text="${doctor.doctorConditionTreated}">Menu 1 Item</button>
+					</a>
+				</section>
+			</main>
+		</div>
+	</section>
+</body>
+</html>

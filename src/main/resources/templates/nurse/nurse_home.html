@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="nurse/base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Doctor Home Page</title>
+</head>
+
+<body>
+	<!--<section>
+		<h3>Nurse After Login: Home Page</h3>
+		<form th:action="@{/physio/logout}" method="post">
+			<button><input type="submit" value="Logout" /></button>
+		</form>
+	</section>-->
+	<section class="text-gray-600 body-font bg-white-100">
+		<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+			<img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero"
+				th:src="@{/images/Doccheck.jpeg}">
+			<div class="text-center lg:w-2/3 w-full">
+				<h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Welcome to E-DOC</h1>
+				<p class="mb-8 leading-relaxed">E-Doc application allow patients to connect with
+					medical professionals on the online platform. In other words, patients get a consultation from
+					doctors in the virtual world.</p>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

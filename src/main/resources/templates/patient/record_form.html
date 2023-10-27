@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="patient/base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="formbold-main-wrapper">
+			<div class="formbold-form-wrapper">
+				<form th:action="@{/patient/process-record}" th:object="${contact}" method="post" enctype="multipart/form-data">
+					<th:block th:if="${session.msg}">
+						<p class="font-bold text-2x2 text-[#002D74] text-center">[[${session.msg}]]</p>
+						<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+					</th:block>
+					<h1 class="text-center display-6 fw-bold pb-2">Record Form</h1>
+
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Upload Record Image </label>					
+						<input class="rounded-xl border w-full formbold-form-input" type="file" name="profileImage" placeholder="Upload Record Image" >
+					</div>
+					<div>
+						<button class="formbold-btn">Store Record</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

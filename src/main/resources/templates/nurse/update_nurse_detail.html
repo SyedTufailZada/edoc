@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="nurse/base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Doctor Register page</title>
+</head>
+
+<body>
+	<!--	<section class="mt-0 mb-8 bg-gray-100 min-h-screen flex items-center justify-center">
+		<div class="mt-8 bg-gray-300 flex rounded-2xl shadow-lg max-w-4xl p-6 items-center">
+			<div class="md:w-1/2 px-8 md:px-16">
+				<h2 class="font-bold text-2xl text-[#002D74]">Register here</h2>
+				<p class="text-xs mt-3 text-[#002D74]">Please be our Member</p>
+
+				<form th:action="@{/nurse/saveNurse}" method="post" th:object="${nurse}" class="flex flex-col gap-4">
+					<input class="p-2 mt-6 rounded-xl border" type="text" th:field="*{nurseFullName}"  required>
+					<input class="p-2  rounded-xl border" type="text" th:field="*{nurseQualification}"  required>
+					<input class="p-2  rounded-xl border" type="text" th:field="*{nurseExperience}" required>
+					<input class="p-2  rounded-xl border" type="text" th:field="*{mrcp}" required>
+					<input class="p-2  rounded-xl border" type="text" th:field="*{nurseNumber}" required>
+					<input class="p-2  rounded-xl border" type="text" th:field="*{hospital}" placeholder="Hospital">
+					<button
+						class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Update</button>
+				</form>
+			</div>
+
+			<div class="md:block hidden w-1/2">
+				<img class="rounded-2xl" th:src="@{/images/doctor.png}">
+			</div>
+		</div>
+	</section>-->
+
+	<section>
+		<div>
+			<form class=" relative ml-42 " th:action="@{/nurse/saveNurse}" method="post" th:object="${nurse}">
+				<div class="flex flex-wrap -mx-3 mb-6">
+					<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-first-name">
+							First Name
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							id="grid-first-name" type="text" th:field="*{nurseFirstName}" placeholder="First Name">
+
+					</div>
+					<div class="w-full md:w-1/2 px-3">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-last-name">
+							Last Name
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							id="grid-last-name" type="text" th:field="*{nurseLastName}" placeholder="Last Name">
+					</div>
+				</div>
+
+				<div class="flex flex-wrap -mx-3 mb-6">
+					<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-first-name">
+							City
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							id="grid-first-name" type="text" th:field="*{nurseCity}" placeholder="Enter City">
+
+					</div>
+					<div class="w-full md:w-1/2 px-3">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-last-name">
+							Zip Code
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							id="grid-last-name" type="text" th:field="*{nurseZip}" placeholder="Zip Code">
+					</div>
+				</div>
+
+
+				<div class="flex flex-wrap w-full mb-3">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						Hospital
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{nurseHospital}" placeholder="Hospital">
+				</div>
+				<div class="flex flex-wrap w-full mb-3">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						Qualification
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{nurseQualification}" placeholder="Enter Degree">
+				</div>
+				<div class="flex flex-wrap w-full mb-3">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						Condition Treated
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{nurseConditionTreated}" placeholder="Condition Treated">
+				</div>
+				<div class="flex flex-wrap w-full mb-3">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						Specialization
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{nurseSpecialization}" placeholder="Specialization">
+				</div>
+
+				<div class="flex flex-wrap -mx-3 mb-2">
+					<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-zip">
+							Services
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							id="grid-zip" type="text" th:field="*{services}"
+							placeholder="eg Acne Scarring,All Diseases related to skin">
+					</div>
+					<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+						<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							for="grid-zip">
+							Experiance
+						</label>
+						<input
+							class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+							id="grid-zip" type="text" th:field="*{nurseExperience}" placeholder="Experience">
+					</div>
+
+
+				</div>
+
+
+
+				<div class="w-full">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						Timing
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{nurseTiming}"
+						placeholder="Monday 7:pm to 10pm, Tuesday 7:pm to 10pm,  wednesday 7:pm to 10pm, ">
+				</div>
+				<div class="pt-2 w-full">
+					<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+						fees
+					</label>
+					<input
+						class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+						id="grid-zip" type="text" th:field="*{nurseFees}" placeholder="Rs.1000">
+				</div>
+				<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-5 rounded">
+					Upload
+				</button>
+			</form>
+
+		</div>
+
+
+	</section>
+
+
+</body>
+
+</html>

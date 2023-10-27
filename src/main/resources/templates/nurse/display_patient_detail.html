@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="nurse/base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<div class="formbold-main-wrapper">
+			<div class="formbold-form-wrapper">
+				<form>
+					<h1 class="text-center display-6 fw-bold pb-2">Display Patient Detail</h1>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> First Name </label>
+						<p class="formbold-form-input"><span th:text="${patient.patientFirstName}"></span></p>
+					</div>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Last Name </label>
+						<p class="formbold-form-input"><span th:text="${patient.patientLastName}"></span></p>
+					</div>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Address </label>
+						<p class="formbold-form-input"><span th:text="${patient.patientAddress}"></span></p>
+					</div>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Mobile Number </label>
+						<p class="formbold-form-input"><span th:text="${patient.patientMobileNumber}"></span></p>
+					</div>
+					<div class="formbold-mb-5">
+						<label for="email" class="formbold-form-label"> Email Address </label>
+						<p class="formbold-form-input"><span th:text="${patient.email}"></span></p>
+					</div>
+					<div>
+						<button class="formbold-btn">Back</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>

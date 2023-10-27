@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap");
+html,
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+
+@media (min-width: 1024px) {
+  .top-navbar {
+    display: -webkit-inline-box !important;
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* BASE STYLES */
+
+.nav__list {
+  display: flex;
+  align-items: baseline;
+  column-gap: 20px;
+}
+
+.nav__link {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 15px;  position: relative;
+  padding: 7px 14px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.nav__link span{
+	color: white;
+}
+
+.dropdown {
+  position: relative;
+  font-size: 14px;
+}
+
+.dropdown:hover .dropdown__list {
+  display: block;
+}
+
+.dropdown__list,
+.submenu__list {
+  display: none;
+  position: absolute;
+  top: 125%;
+  left: 0;
+  background-color: #fff;
+  min-width: max-content;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown__item,
+.submenu__item {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.dropdown__item:hover,
+.submenu__item:hover {
+  background-color: rgb(234, 234, 234);
+}
+
+.submenu {
+  position: relative;
+}
+
+.submenu:hover .submenu__list {
+  display: block;
+}
+
+.submenu__list {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #fff;
+  min-width: max-content;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1470px) {
+  .dropdown__list {
+    left: initial;
+    right: 0;
+  }
+
+  .submenu__list {
+    left: initial;
+    right: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .header__content {
+    padding: 25px 0;
+    flex-direction: column;
+    row-gap: 18px;
+    align-items: center;
+    position: relative;
+  }
+
+  .nav__list {
+    column-gap: 10px;
+  }
+
+  .nav__item {
+    position: initial;
+  }
+
+  .dropdown__list {
+    top: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .submenu__list {
+    right: initial;
+    left: 0;
+    top: 100%;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+.footer_logo{
+    width: 80px;
+    position: relative;
+    top: -23px;
+    left: -20px;
+}

@@ -1,0 +1,189 @@
+.Main-div{
+	padding-left: 1%;
+	padding-top: 0px;
+	height: 270px;
+	width: 100%;
+	
+}
+
+/* .card{
+	background-color: #f4efef;
+	height: 300px;
+	width: 80%;
+	margin-top: 90px;
+	margin-left: 10%;
+
+} */
+.avatar{
+	height: 80px;
+	width: 80px;
+	margin-left: 40px;
+	margin-top: 40px;
+}
+.myName{
+	font-family: 'Montserrat', sans-serif;
+	color: black;
+	font-size: 1.2rem; 
+	font-weight: bolder;
+}
+.MySpecialization{
+	font-family: 'Montserrat', sans-serif;
+	color: black;
+	font-size: 20px;
+}
+.this-name{
+	padding-top: 45px;
+	padding-left: 30px
+}
+
+.myBtn1{
+	height: 40px;
+    margin-top: 60px;
+    width: 338px;
+    font-size: 20px;
+    background-color: #f9b509;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+.myBtn1:hover{
+	background-color: transparent;
+	border: solid 1px #1E608B;
+	color: #1E608B;
+	
+}
+.myLine{
+	height: 50px;
+	width: 1px;
+	background-color: #9ED1EF;
+	margin-left: 15px;
+}
+/* .box{
+	height: 70px;
+	width: 250px;
+	border:solid 1px black;
+	border-radius: 5px;
+	margin-left: 50px;
+} */
+/* .h3{
+	color: black;
+	font-size: 20px;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+.p1{
+	height: 3%;
+	width: 3%;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.cc{
+	padding-left: 5px;
+	color: green;
+}
+.c2{
+	padding-left: 65px;
+} */
+
+.divider{
+	height: 1px;
+	width: 650px;
+	margin-top:1px;
+	background-color: #EFF0F2;
+}
+
+.star{
+	height: 20px;
+	width: 20px;
+	margin-right: 10px;
+}
+.second-section{
+	margin-left: 7%;
+}
+
+.circle{
+	background-color:#232426;
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	padding-top: 17px;
+	font-weight: 600;
+	font-size: 22px;
+}
+
+.third-section{
+	padding-left: 20%;
+	display: flex;
+	padding-top: 5%;
+}
+
+.p{
+	font-weight: 600;
+	padding-left: 20px;
+	font-size: 18px;
+}
+
+.black-line{
+	height: 4px;
+	width: 150px;
+	background: black;
+	border-radius: 20px;
+	margin-left: 35px;
+	margin-top: 10px;
+}
+
+.list-section{
+	padding-left: 2%;
+	top: 0;
+}
+.card-section{
+	height:390px;
+	width: 370px;
+	background-color: white;
+	border-radius: 3%;
+	border-style:none;
+	box-shadow: 15px 15px 35px 35px #F0F0F0;
+	position: fixed;
+	margin-left: 50%;
+	top: 30vh;
+}
+
+.mini-divider{
+	height: 1px;
+	width: 300px;
+	background:black;
+	margin: 0 auto;
+}
+
+.clock{
+	height: 15px;
+	width: 15px;
+	border-radius: 55%;
+	margin-top: 20px;
+	margin-left: 35px;
+}
+
+.time{
+	margin-left: 13px;
+	margin-top: 14px;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+ul li{
+	
+	list-style-type: circle;
+}
+/* .btn1{
+	height: 40px;
+	margin-top: 10px;
+	width: 330px;
+	font-size: 20px;
+	background-color: #f9b509;
+	color: white;
+	border:none;
+	border-radius: 3px;
+
+} */

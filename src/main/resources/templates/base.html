@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com" th:fragment="layout(content)">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>E-Doc</title>
+	<link rel="stylesheet" th:href="@{https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css}" />
+	<link th:href="@{https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700}" rel="stylesheet" />
+	<link rel="stylesheet"
+		th:href="@{https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css}"
+		integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.4.0/tailwind.min.css}"
+		integrity="sha256-CAI/7ThhltsmP2L2zKBYa7FknB3ZwFbD0nqL8FCdxdc=" crossorigin="anonymous" />
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+	<script th:src="@{https://cdn.tailwindcss.com}"></script>
+	<link rel="stylesheet" th:href="@{/css/navbar.css}" />
+
+	<link rel="stylesheet" th:href="@{https://unpkg.com/flowbite@1.5.1/dist/flowbite.min.css}" />
+</head>
+
+<body>
+
+	<!-- Header Start  -->
+	<nav class="flex items-center bg-gray-800 p-0 flex-wrap">
+		<a href="#" class="p-2 mr-4 inline-flex items-center">
+			<img th:src="@{/images/e-doc2.png}" class="h-12 pt-1 px-3 " alt="img...">
+			<span class="text-xl text-white font-bold uppercase tracking-wide">E-Doc</span>
+		</a>
+		<button
+			class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+			data-target="#navigation">
+			<i class="material-icons">menu</i>
+		</button>
+		<div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
+			<div
+				class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
+				<a href="/"
+					class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+					<span>Home</span>
+				</a>
+				<li class="nav__item dropdown">
+					<a class="nav__link" href="#">Register &#x25BE;</a>
+
+					<ul class="dropdown__list">
+						<li class="dropdown__item">
+							<a href="#" th:href="@{/registerPatient}" class="dropdown__link">Patient</a>
+						</li>
+						<li class="dropdown__item">
+							<a href="#" th:href="@{/registerDoctor}" class="dropdown__link">Doctor</a>
+						</li>
+						<li class="dropdown__item">
+							<a href="#" th:href="@{/registerNurse}" class="dropdown__link">Nurse</a>
+						</li>
+						<li class="dropdown__item">
+							<a href="#" th:href="@{/registerPhysio}" class="dropdown__link">Physiotherapist</a>
+						</li>
+					</ul>
+
+				</li>
+
+				<a th:href="@{/login}"
+					class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+					<span>Login</span>
+				</a>
+			</div>
+		</div>
+	</nav>
+	<!-- Header end  -->
+
+
+
+	<div th:replace="${content}"></div>
+
+
+
+
+	<!-- footer Start  -->
+
+	<!--	<footer>
+		<div class="row">
+			<div class="col">
+				<img th:src="@{/images/e-doc2.png}" class="footer_logo">
+				<p class="footer_about">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore harum
+					molestias nesciunt,
+					doloremque magni aspernatur iste blanditiis, fugiat quaerat accusamus ut, vero tempore.
+					Fugiat, illum!
+				</p>
+			</div>
+			<div class="col">
+				<h3>Office <div class="bottom_line"><span></span></div>
+				</h3>
+				<p>2841 Romines Mill Road</p>
+				<p>Plano</p>
+				<p>Texas, ZIP 75074, United States</p>
+				<p class="footer_email">alexastockphotos@gamil.com</p>
+				<h4>+1 - 2145958195</h4>
+			</div>
+			<div class="col">
+				<h3>Links <div class="bottom_line"><span></span></div>
+				</h3>
+				<ul>
+					<li><a href="">HOME</a></li>
+					<li><a href="">ABOUT</a></li>
+					<li><a href="">SERVICE</a></li>
+					<li><a href="">CONTACT US</a></li>
+				</ul>
+			</div>
+			<div class="col">
+				<h3>Newsletter <div class="bottom_line"><span></span></div>
+				</h3>
+				<form>
+					<ion-icon class="icon" name="mail"></ion-icon>
+					<input type="email" placeholder="Enter your email" required>
+					<button type="submit">
+						<ion-icon class="icon_right" name="arrow-round-forward"></ion-icon>
+					</button>
+				</form>
+				<div class="social_icons">
+					<ion-icon class="social_icon" name="logo-facebook"></ion-icon>
+					<ion-icon class="social_icon" name="logo-whatsapp"></ion-icon>
+					<ion-icon class="social_icon" name="logo-twitter"></ion-icon>
+					<ion-icon class="social_icon" name="logo-instagram"></ion-icon>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<p class="copyright">Cosas Learning Ⓒ 2022 - All Rights Reserved</p>
+	</footer>-->
+
+
+
+
+
+
+
+
+
+
+	<footer class="bg-gray-800">
+		<div class="container mx-auto px-8">
+			<div class="w-full flex flex-col md:flex-row py-6">
+				<div class="flex-1 mb-6 text-black">
+					<a class="text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+						<p>E-Doc</p>
+					</a>
+				</div>
+				<div class="flex-1">
+					<p class="uppercase text-white md:mb-6">Top Hospital's'</p>
+					<ul class="list-reset mb-6">
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#" class="no-underline hover:underline text-white hover:text-pink-500">PIMS</a>
+						</li>
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#" class="no-underline hover:underline text-white hover:text-pink-500">Shifa</a>
+						</li>
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#" class="no-underline hover:underline text-white hover:text-pink-500">Rawal</a>
+						</li>
+					</ul>
+				</div>
+				<div class="flex-1">
+					<p class="uppercase text-white md:mb-6">Links</p>
+					<ul class="list-reset mb-6">
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#" class="no-underline hover:underline text-white hover:text-pink-500">E-Doc
+								Facebook</a>
+						</li>
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#" class="no-underline hover:underline text-white hover:text-pink-500">E-Doc
+								Twitter</a>
+						</li>
+					</ul>
+				</div>
+				<div class="flex-1">
+					<p class="uppercase text-white md:mb-6">Social</p>
+					<ul class="list-reset mb-6">
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#" class="no-underline hover:underline text-white hover:text-pink-500">Facebook</a>
+						</li>
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#" class="no-underline hover:underline text-white hover:text-pink-500">Twitter</a>
+						</li>
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#"
+								class="no-underline hover:underline text-white hover:text-pink-500">Instagram</a>
+						</li>
+					</ul>
+				</div>
+				<div class="flex-1">
+					<p class="uppercase text-white md:mb-6">Servies</p>
+					<ul class="list-reset mb-6">
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#" class="no-underline hover:underline text-white hover:text-pink-500">Doctor
+								Service</a>
+						</li>
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#" class="no-underline hover:underline text-white hover:text-pink-500">Nurse
+								Service</a>
+						</li>
+						<li class="mt-2 inline-block mr-2 md:block md:mr-0">
+							<a href="#"
+								class="no-underline hover:underline text-white hover:text-pink-500">Physiotherapist
+								Service</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- <a href="https://www.freepik.com/free-photos-vectors/background" class="text-gray-500">Background vector created by freepik - www.freepik.com</a> -->
+	</footer>
+
+
+	<!-- footer end  -->
+
+
+
+	<script th:src="@{/js/script.js}"></script>
+	<script th:src="@{/js/script2.js}"></script>
+	<script th:src="@{https://unpkg.com/flowbite@1.5.1/dist/flowbite.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Your Registered Email Doctor</title>
+</head>
+
+<body>
+	<section class="mt-8 bg-gray-100 min-h-screen flex items-center justify-center">
+		<div class="bg-gray-300 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+			<div class=" px-10 md:px-18">
+				<h2 class="font-bold text-2xl text-[#002D74]">Enter Your Registered Email</h2>
+				<form th:action="@{/send-otp}" method="post" class="flex flex-col gap-4">
+					<input class="p-2 mt-6 rounded-xl border" type="email" name="email" placeholder="Email">
+					<button class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300">Send
+						OTP</button>
+				</form>
+			</div>
+	</section>
+
+</body>
+
+</html>
